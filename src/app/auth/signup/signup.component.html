@@ -1,0 +1,20 @@
+<form class="signup-form" (ngSubmit)="onSignup(f)" #f="ngForm">
+  <img src="https://webdevolutions.blob.core.windows.net/images/Media/Logos/Cloud/DevolutionsCloud-Database-Icon-MR.png">
+  <mat-form-field class="signup-full-width">
+    <input matInput placeholder="Enter your email" ngModel name="email" required #email="ngModel" pattern="^[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9]@[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$">
+  </mat-form-field>
+  <div *ngIf="email.invalid && (email.dirty || email.touched)">
+	<span *ngIf="email.errors.pattern">Please enter a valid email address!</span>
+	<span *ngIf="email.errors.required">Email is required!</span>
+  </div>
+
+  <mat-form-field class="signup-full-width">
+    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" ngModel name="password" required #password="ngModel" minlength="6" maxlength="30">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+   <div *ngIf="password.invalid && (password.dirty || password.touched)">
+	<span *ngIf="password.errors.minlength">Password must be at least 6 characters long!</span>
+	<span *ngIf="password.errors.maxlength">Password is too long!</span>
+  </div>
+<button mat-raised-button color="primary" type="submit" class="btn">Sign up</button>
+</form>

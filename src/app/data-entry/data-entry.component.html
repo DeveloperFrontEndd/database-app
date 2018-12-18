@@ -1,3 +1,45 @@
-<p>
-  data-entry works!
-</p>
+<form class="data-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+	<mat-form-field class="field">
+		<input matInput placeholder="First name" ngModel name="firstName" required minlength="3" maxlength="18" #firstName="ngModel">
+	</mat-form-field>
+	<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+	  <span *ngIf="firstName.errors.minlength">Name must be at least 3 characters long.</span>
+	  <span *ngIf="firstName.errors.maxlength">First name is too long!</span>
+	  <span *ngIf="firstName.errors.required">Name is required!</span>
+    </div>
+	<mat-form-field class="field">
+		<input matInput placeholder="Last name" ngModel name="lastName" required minlength="3" maxlength="18" #lastName="ngModel">
+	</mat-form-field>
+	<div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+	  <span *ngIf="lastName.errors.minlength">Last name must be at least 3 characters long.</span>
+	  <span *ngIf="lastName.errors.maxlength">Last name is too long!</span>
+	  <span *ngIf="lastName.errors.required">Last name is required!</span>
+    </div>
+	<mat-form-field class="field">
+		<input matInput placeholder="Email" ngModel name="email" required pattern="^[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9]@[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$" #email="ngModel">
+	</mat-form-field>
+	<div *ngIf="email.invalid && (email.dirty || email.touched)">
+	<span *ngIf="email.errors.pattern">Please enter a valid email address!</span>
+	<span *ngIf="email.errors.required">Email is required!</span>
+    </div>
+	<mat-form-field class="field">
+		<input matInput placeholder="Age" ngModel name="age" pattern="^[0-9]*$" #age="ngModel"required>
+	</mat-form-field>
+	<div *ngIf="age.invalid && (age.dirty || age.touched)">
+		<span *ngIf="age.errors.required">Age is required!</span>
+		<span *ngIf="age.errors.pattern">You must enter numbers not letters</span>
+	</div>
+	<mat-form-field class="field">
+		<input matInput placeholder="Link from the image" ngModel name="imagePath" required>
+	</mat-form-field>
+	  <table class="field" cellspacing="0"><tr>
+    <td><mat-form-field class="field">
+      <input matInput placeholder="City" ngModel name="city" required>
+    </mat-form-field></td>
+    <td><mat-form-field class="field">
+      <input matInput placeholder="State" ngModel name="state"required>
+    </mat-form-field>
+    </table>
+    <button mat-raised-button type="submit" [disabled]="!f.valid">Send to database</button>
+</form>
+<div class="message" *ngIf="dataSend">Data was successfully sent!</div>

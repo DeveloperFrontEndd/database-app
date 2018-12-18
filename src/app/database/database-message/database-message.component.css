@@ -1,0 +1,9 @@
+h3 { 
+  text-align: center;
+ }
+.btnMenu {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #43b7ff;
+}

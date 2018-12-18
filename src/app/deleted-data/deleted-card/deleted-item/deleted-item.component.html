@@ -1,0 +1,15 @@
+<div class="container">
+<mat-card class="card" style="cursor: pointer;" [routerLink]="index" routerLinkActive="active">
+	<mat-card-header>
+		<img [src]="recoveryModel.imagePath" mat-card-avatar class="example-header-image">
+		<mat-card-title>Name: {{ recoveryModel.firstName }}</mat-card-title>
+		<mat-card-title>Surname: {{ recoveryModel.lastName }}</mat-card-title>
+		<mat-card-subtitle>Age: {{ recoveryModel.age }}</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content>
+		<p><strong>Email:</strong> {{ recoveryModel.email }}</p>
+		<p><strong>City:</strong> {{ recoveryModel.city }}</p>
+		<p><strong>State:</strong> {{ recoveryModel.state }}</p>
+	</mat-card-content>
+</mat-card>
+</div>

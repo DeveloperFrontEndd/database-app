@@ -1,0 +1,28 @@
+.signin-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signin-full-width {
+  width: 100%;
+}
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+a {
+  text-decoration: none;
+}
+span {
+  color: grey;
+}

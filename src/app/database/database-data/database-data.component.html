@@ -1,0 +1,15 @@
+<div class="container">
+<mat-card class="card" style="cursor: pointer;" *ngFor="let data of database; let i=index" [routerLink]="[i, 'edit']" routerLinkActive="active">
+	<mat-card-header>
+		<img [src]="data.imagePath" mat-card-avatar class="example-header-image">
+		<mat-card-title>Name: {{ data.firstName }}</mat-card-title>
+		<mat-card-title>Surname: {{ data.lastName }}</mat-card-title>
+		<mat-card-subtitle>Age: {{ data.age }}</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content>
+		<p><strong>Email:</strong> {{ data.email }}</p>
+		<p><strong>City:</strong> {{ data.city }}</p>
+		<p><strong>State:</strong> {{ data.state }}</p>
+	</mat-card-content>
+</mat-card>
+</div>

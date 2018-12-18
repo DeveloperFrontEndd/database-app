@@ -1,0 +1,6 @@
+<h3>Please select a card if you want to change profile card or <br>click on button if you want to save or fetch data on server!</h3>
+	<button mat-button [matMenuTriggerFor]="menu" class="btnMenu">Menu</button>
+    	<mat-menu #menu="matMenu">
+     		<button mat-menu-item (click)="onSave()">Save data</button>
+     		<button mat-menu-item (click)="onFetch()">Fetch data</button>
+    	</mat-menu>

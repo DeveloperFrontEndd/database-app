@@ -1,0 +1,29 @@
+<form class="reactiveForm" [formGroup]="formData" (ngSubmit)="onUpdate()">
+	<div class="btn">	
+	  <button mat-raised-button type="submit">Update</button>
+	  <button mat-raised-button type="button" color="warn" (click)="recoveryData()" class="btn2">Delete</button>
+ 	  <button mat-raised-button type="button" color="accent" (click)="onCancel()" class="btn2">Cancel</button>
+    </div>
+	<mat-form-field class="rField">
+		<input matInput formControlName="firstName" placeholder="First name"> 
+	</mat-form-field>
+	<mat-form-field class="rField">
+		<input matInput formControlName="lastName" placeholder="Last name">
+	</mat-form-field>
+	<mat-form-field class="rField">
+		<input matInput formControlName="email" placeholder="Email">
+	</mat-form-field>
+	<mat-form-field class="rField">
+		<input matInput formControlName="age" placeholder="Age">
+	</mat-form-field>
+	<mat-form-field class="rField">
+		<input matInput formControlName="imagePath" placeholder="Link from the image" #imagePath>
+	</mat-form-field>
+	<img [src]="imagePath.value">
+	<mat-form-field class="rField">
+		<input matInput formControlName="city" placeholder="City">
+	</mat-form-field>
+	<mat-form-field class="rField">
+		<input matInput formControlName="state" placeholder="State">
+	</mat-form-field>
+</form>

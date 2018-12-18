@@ -1,0 +1,11 @@
+.container {
+  width: 400px;
+}
+.card {
+  margin: 10px;
+  width: 100%;
+  float: left;
+}
+.active {
+  background-color: #004380;
+}

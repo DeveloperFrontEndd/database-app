@@ -1,0 +1,25 @@
+.reactiveForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reactiveForm > * {
+  width: 50%;
+}
+.rField {
+  width: 100%;
+}
+img {
+ max-width: 300px;
+ max-height: 300px;
+}
+.btn {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 13px;
+ margin-bottom: 13px;
+}
+.btn2 {
+	margin-left: 10px;
+}
