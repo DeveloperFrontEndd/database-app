@@ -12,7 +12,7 @@
     <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" ngModel name="password" required #password="ngModel" minlength="6" maxlength="30">
     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
   </mat-form-field>
-   <div *ngIf="password.invalid && (password.dirty || password.touched)">
+   <div *ngIf="password.invalid && (password.dirty || password.touched)" class="last-div">
 	<span *ngIf="password.errors.minlength">Password must be at least 6 characters long!</span>
 	<span *ngIf="password.errors.maxlength">Password is too long!</span>
   </div>

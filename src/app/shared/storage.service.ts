@@ -15,12 +15,14 @@ export class StorageService {
   }
 
   getCard() {
-  	return this.http.get('https://database-final-http.firebaseio.com/data.json')
-  	  .subscribe(
-  	  	(response: Response) => {
-  	  	  const database: Database[] = response.json();
-  	  	  this.databaseService.setData(database);
-  	  	}
-  	  );
+    return this.http.get('https://database-final-http.firebaseio.com/data.json') 
+      .subscribe(
+        (response: Response) => {
+          const database: Database[] = response.json();
+          this.databaseService.setData(database);
+          console.log(database);
+        }
+      );
   }
+
 }
